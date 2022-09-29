@@ -1,14 +1,14 @@
-import java.sql.Date;
+import java.util.Date;
 
 abstract class DocTributario {
     private String numero;
     private String rut;
     private Date fecha;
 
-    public DocTributario(String numero, String rut, Date fecha){
+    public DocTributario(String numero, String rut){
         this.numero = numero;
         this.rut = rut;
-        this.fecha = fecha;
+        this.fecha = new Date();
     }
     public String getNumero(){
         return numero;
@@ -24,12 +24,12 @@ abstract class DocTributario {
     }
 }
 class Boleta extends DocTributario{
-    public Boleta(String numero, String rut, Date fecha){
-        super(numero, rut , fecha);
+    public Boleta(String numero, String rut){
+        super(numero, rut);
     }
 }
 class Factura extends DocTributario{
-    public Factura(String numero, String rut, Date fecha){
-        super(numero, rut , fecha);
+    public Factura(String numero, String rut){
+        super(numero, rut);
     }
 }

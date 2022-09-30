@@ -16,7 +16,7 @@ public class DetalleOrden {
     }
 
     public float calcIVA(){
-        return articulo.getPrecio() * 0.19f;
+        return calcPrecioSinIVA() * 0.19f;
     }
 
     public float calcPeso(){
@@ -24,6 +24,6 @@ public class DetalleOrden {
     }
 
     public String toString() {
-        return "articulo: "+articulo.getNombre()+"\ncantidad: "+cantidad;
+        return "articulo: "+articulo.getNombre()+" - cantidad: "+cantidad;
     }
 }

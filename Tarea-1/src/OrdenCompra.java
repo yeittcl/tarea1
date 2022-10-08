@@ -7,6 +7,7 @@ public class OrdenCompra {
     private ArrayList<DetalleOrden> detalles;
     private Cliente cliente;
     private DocTributario documentoTrib;
+    private ArrayList<Pago> pagos;
 
     public OrdenCompra(DocTributario documentoTrib, Cliente cliente){
         this.estado = "Pago Pendiente";
@@ -14,10 +15,15 @@ public class OrdenCompra {
         this.cliente = cliente;
         fecha = new Date();
         detalles = new ArrayList<DetalleOrden>();
+        pagos = new ArrayList<Pago>();
     }
     public void setDetalleOrden(Articulo articulo, int cantidad){
         DetalleOrden aux = new DetalleOrden(cantidad,articulo);
         detalles.add(aux);
+    }
+
+    public void setPagos(Pago pago){
+        pagos.add(pago);
     }
 
     public float calcPrecioSinIVA(){
